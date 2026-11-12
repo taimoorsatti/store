@@ -1,0 +1,106 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "404": {
+      "title": "404 - Page Not Found",
+      "subtext": "The beauty ritual page you are searching for is unavailable.",
+      "link": "Return to Storefront"
+    },
+    "password_page": {
+      "login_form_heading": "Enter store using password",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter"
+    },
+    "continue_shopping": "Continue Shopping",
+    "search": {
+      "search": "Search beauty essentials, serums, devices...",
+      "submit": "Search",
+      "heading": "Search Results for \"{{ terms }}\"",
+      "no_results": "No beauty rituals matched your query."
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "close": "Close",
+    "unit_price_separator": "per"
+  },
+  "sections": {
+    "header": {
+      "menu": "Menu",
+      "cart_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      }
+    },
+    "cart": {
+      "title": "Your Shopping Bag",
+      "empty": "Your bag is currently empty",
+      "subtotal": "Subtotal",
+      "checkout": "Proceed to Checkout",
+      "free_shipping_unlocked": "Complimentary UAE Express Delivery Unlocked!",
+      "free_shipping_away": "Add {{ amount }} more for Complimentary UAE Delivery",
+      "view_cart": "View Bag",
+      "remove": "Remove",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxes and express shipping calculated at checkout"
+    },
+    "featured_products": {
+      "title": "The Launch Collection",
+      "subtitle": "Six meticulously engineered beauty essentials, crafted for modern luxury living.",
+      "view_all": "View All Products"
+    },
+    "collection_template": {
+      "title": "All Beauty Essentials",
+      "filter_and_sort": "Filter & Sort",
+      "filter_by_label": "Refine Selection",
+      "clear_all": "Clear all filters",
+      "clear": "Clear",
+      "apply": "Apply Filters",
+      "close": "Close",
+      "sort_by_label": "Sort by",
+      "product_count": "{{ count }} products",
+      "product_count_simple": "{{ count }} items",
+      "from": "From AED",
+      "to": "To AED",
+      "in_stock": "In Stock",
+      "out_of_stock": "Out of Stock",
+      "empty": "No beauty essentials matched your filter selection.",
+      "use_fewer_filters": "Try clearing or adjusting your active filters.",
+      "availability": "Availability",
+      "price": "Price Range",
+      "product_type": "Category",
+      "brand": "Brand",
+      "sort_options": {
+        "manual": "Featured Selection",
+        "best_selling": "Best Sellers",
+        "title_ascending": "Alphabetically, A–Z",
+        "title_descending": "Alphabetically, Z–A",
+        "price_ascending": "Price, Low to High",
+        "price_descending": "Price, High to Low",
+        "created_descending": "Newest First",
+        "created_ascending": "Oldest First"
+      }
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Bag",
+      "buy_now": "Buy It Now",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "in_stock": "In Stock · Ready to Ship",
+      "on_sale": "Save",
+      "quick_add": "Quick Add",
+      "quantity": {
+        "label": "Quantity",
+        "increase": "Increase quantity",
+        "decrease": "Decrease quantity"
+      },
+      "uae_delivery": "UAE Express Delivery in 1–2 business days across Dubai & Abu Dhabi",
+      "cod_available": "Cash on Delivery (COD) & Apple Pay supported"
+    }
+  }
+}

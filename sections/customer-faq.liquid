@@ -1,0 +1,92 @@
+<section class="customer-faq-section" style="padding: 5.5rem 0; background: #FFFFFF; border-bottom: 1px solid var(--color-border);">
+  <div class="container" style="max-width: 900px;">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: 0.75rem;">
+        {{ section.settings.badge | default: 'CLIENT CONCIERGE ASSISTANCE' }}
+      </span>
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;">
+        {{ section.settings.title | default: 'Frequently Asked Questions' }}
+      </h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.6;">
+        {{ section.settings.subtitle | default: 'Everything you need to know about our cosmetics rituals, express UAE delivery, and payment options.' }}
+      </p>
+    </div>
+
+    <div class="faq-accordion-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <!-- FAQ 1 -->
+      <div class="accordion-item" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.5rem 1.5rem; background: var(--color-bg);">
+        <button type="button" class="accordion-header" style="padding: 1.15rem 0; font-size: 1.05rem;">
+          <span>How fast is delivery across Dubai and the UAE?</span>
+          <span class="accordion-icon" style="font-size: 1.25rem; font-weight: 400; color: var(--color-accent); margin-left: 1rem;">+</span>
+        </button>
+        <div class="accordion-content">
+          Orders placed before 2:00 PM are dispatched same-day. Express courier delivery arrives in 1–2 business days across Dubai, Abu Dhabi, Sharjah, and all other Emirates. Complimentary shipping is automatically applied to all orders above AED 250.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="accordion-item" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.5rem 1.5rem; background: var(--color-bg);">
+        <button type="button" class="accordion-header" style="padding: 1.15rem 0; font-size: 1.05rem;">
+          <span>Can I pay using Cash on Delivery (COD) or Apple Pay?</span>
+          <span class="accordion-icon" style="font-size: 1.25rem; font-weight: 400; color: var(--color-accent); margin-left: 1rem;">+</span>
+        </button>
+        <div class="accordion-content">
+          Yes! We offer Cash on Delivery (COD) across all seven Emirates with no hidden surcharge. We also support Apple Pay, Visa, Mastercard, and Tabby installment options at checkout.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="accordion-item" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.5rem 1.5rem; background: var(--color-bg);">
+        <button type="button" class="accordion-header" style="padding: 1.15rem 0; font-size: 1.05rem;">
+          <span>Are FABFaddons devices suitable for sensitive or acne-prone skin?</span>
+          <span class="accordion-icon" style="font-size: 1.25rem; font-weight: 400; color: var(--color-accent); margin-left: 1rem;">+</span>
+        </button>
+        <div class="accordion-content">
+          Absolutely. Our sonic devices use ultra-soft, FDA-grade antimicrobial silicone bristles that do not harbor bacteria. The 7-Color LED mask offers targeted blue light specifically calibrated to calm active blemishes without drying the skin barrier.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="accordion-item" style="border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.5rem 1.5rem; background: var(--color-bg);">
+        <button type="button" class="accordion-header" style="padding: 1.15rem 0; font-size: 1.05rem;">
+          <span>What is the warranty and return policy?</span>
+          <span class="accordion-icon" style="font-size: 1.25rem; font-weight: 400; color: var(--color-accent); margin-left: 1rem;">+</span>
+        </button>
+        <div class="accordion-content">
+          All beauty devices come with a 1-year replacement warranty against manufacturing defects. Unopened and sealed cosmetics are eligible for 14-day returns through our Dubai concierge team.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Eyebrow badge",
+      "default": "CLIENT CONCIERGE ASSISTANCE"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Everything you need to know about our cosmetics rituals, express UAE delivery, and payment options."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer FAQ"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,121 @@
+<header style="background: rgba(250, 247, 242, 0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 50; transition: box-shadow 0.3s ease;">
+  <div class="container" style="height: 5.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;">
+    <!-- Mobile Menu Trigger & Logo -->
+    <div style="display: flex; align-items: center; gap: 1.25rem;">
+      <button type="button" class="mobile-menu-trigger" id="mobile-menu-open" aria-label="Open navigation menu" style="display: none; padding: 0.5rem; color: var(--color-primary);">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <!-- Brand Identity -->
+      <a href="{{ routes.root_url }}" style="display: flex; flex-direction: column; text-decoration: none;">
+        <span style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 700; color: var(--color-primary); letter-spacing: -0.02em; line-height: 1;">
+          {{ section.settings.logo_text | default: shop.name }}
+        </span>
+        <span style="font-size: 8.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-text-muted); margin-top: 2px;">
+          DUBAI · HAUTE BEAUTÉ
+        </span>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="nav-desktop" style="display: flex; gap: 2rem; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+      <a href="{{ routes.root_url }}" style="color: var(--color-text); position: relative; padding: 0.5rem 0;">
+        {% if request.locale.iso_code == 'ar' %}الرئيسية{% else %}Home{% endif %}
+      </a>
+      <a href="{{ routes.all_products_collection_url }}" style="color: var(--color-text); position: relative; padding: 0.5rem 0;">
+        {% if request.locale.iso_code == 'ar' %}المتجر الكامل{% else %}Shop Catalog{% endif %}
+      </a>
+      <a href="/collections/all?filter.p.product_type=Facial+Devices" style="color: var(--color-text); position: relative; padding: 0.5rem 0;">
+        {% if request.locale.iso_code == 'ar' %}أجهزة التجميل{% else %}Beauty Devices{% endif %}
+      </a>
+      <a href="/collections/all?filter.p.product_type=Botanical+Skincare" style="color: var(--color-text); position: relative; padding: 0.5rem 0;">
+        {% if request.locale.iso_code == 'ar' %}العناية بالبشرة{% else %}Skincare Elixirs{% endif %}
+      </a>
+      <a href="/pages/about" style="color: var(--color-text); position: relative; padding: 0.5rem 0;">
+        {% if request.locale.iso_code == 'ar' %}قصتنا{% else %}Brand Story{% endif %}
+      </a>
+      <a href="/pages/contact" style="color: var(--color-text); position: relative; padding: 0.5rem 0;">
+        {% if request.locale.iso_code == 'ar' %}الكونسيرج{% else %}Concierge{% endif %}
+      </a>
+    </nav>
+
+    <!-- Affordances: Language, Wishlist, Search, Cart -->
+    <div style="display: flex; align-items: center; gap: 0.875rem;">
+      <!-- Language Switcher -->
+      <div class="theme-language-switcher" style="display: flex; align-items: center; background: rgba(42, 18, 30, 0.05); border: 1px solid var(--color-border); border-radius: 4px; padding: 2px;">
+        <a href="?locale=en" class="lang-option {% unless request.locale.iso_code == 'ar' %}is-active{% endunless %}" style="padding: 4px 8px; font-size: 11px; font-weight: 700; border-radius: 3px; text-decoration: none; transition: all 0.2s; {% unless request.locale.iso_code == 'ar' %}background: var(--color-primary); color: #FAF7F2;{% else %}color: var(--color-text);{% endunless %}">
+          EN
+        </a>
+        <a href="?locale=ar" class="lang-option {% if request.locale.iso_code == 'ar' %}is-active{% endif %}" style="padding: 4px 8px; font-size: 11px; font-weight: 700; border-radius: 3px; text-decoration: none; transition: all 0.2s; {% if request.locale.iso_code == 'ar' %}background: var(--color-primary); color: #FAF7F2;{% else %}color: var(--color-text);{% endif %}">
+          العربية
+        </a>
+      </div>
+
+      <!-- Search Trigger -->
+      <a href="{{ routes.search_url }}" aria-label="Search Catalog" style="padding: 0.5rem; color: var(--color-primary); display: flex; align-items: center;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </a>
+
+      <!-- Wishlist Indicator -->
+      <a href="/collections/all" aria-label="Wishlist" style="position: relative; padding: 0.5rem; color: var(--color-primary); display: flex; align-items: center;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span data-wishlist-count style="display: none; position: absolute; top: 0; right: 0; background: var(--color-accent); color: var(--color-primary); font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; align-items: center; justify-content: center;">0</span>
+      </a>
+
+      <!-- Cart Drawer Trigger -->
+      <button data-cart-drawer-trigger aria-label="Open Shopping Bag" style="position: relative; padding: 0.5rem; color: var(--color-primary); display: flex; align-items: center; cursor: pointer;">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span data-cart-count-badge style="position: absolute; top: 0; right: 0; background: var(--color-primary); color: #FAF7F2; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+          {{ cart.item_count | default: 0 }}
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu-drawer" style="display: none; position: fixed; inset: 0; z-index: 100; background: rgba(26,9,18,0.6); backdrop-filter: blur(4px);">
+    <div style="background: var(--color-bg); width: 300px; height: 100%; padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 0 24px rgba(0,0,0,0.2);">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border);">
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--color-primary);">FABFaddons</span>
+            <span style="font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-text-muted);">Dubai Haute Beauté</span>
+          </div>
+          <button id="mobile-menu-close" aria-label="Close menu" style="font-size: 1.75rem; color: var(--color-primary); line-height: 1;">&times;</button>
+        </div>
+
+        <nav style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+          <a href="{{ routes.root_url }}">{% if request.locale.iso_code == 'ar' %}الرئيسية{% else %}Home{% endif %}</a>
+          <a href="{{ routes.all_products_collection_url }}">{% if request.locale.iso_code == 'ar' %}المتجر الكامل{% else %}Shop Catalog{% endif %}</a>
+          <a href="/collections/all?filter.p.product_type=Facial+Devices">{% if request.locale.iso_code == 'ar' %}أجهزة التجميل{% else %}Beauty Devices{% endif %}</a>
+          <a href="/collections/all?filter.p.product_type=Botanical+Skincare">{% if request.locale.iso_code == 'ar' %}العناية بالبشرة{% else %}Skincare Elixirs{% endif %}</a>
+          <a href="/pages/about">{% if request.locale.iso_code == 'ar' %}قصتنا{% else %}Brand Story{% endif %}</a>
+          <a href="/pages/contact">{% if request.locale.iso_code == 'ar' %}الكونسيرج{% else %}Concierge{% endif %}</a>
+          <a href="/pages/faq">{% if request.locale.iso_code == 'ar' %}الأسئلة الشائعة{% else %}FAQ{% endif %}</a>
+        </nav>
+      </div>
+
+      <div style="padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+        <p style="font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 0.75rem; font-weight: 600;">Language / اللغة</p>
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="?locale=en" class="btn-secondary" style="flex: 1; padding: 0.5rem; font-size: 11px; text-align: center;">English</a>
+          <a href="?locale=ar" class="btn-primary" style="flex: 1; padding: 0.5rem; font-size: 11px; text-align: center;">العربية</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "FABFaddons"
+    }
+  ]
+}
+{% endschema %}

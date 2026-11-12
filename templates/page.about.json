@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {}
+    },
+    "why_choose_us": {
+      "type": "why-choose-us",
+      "settings": {}
+    }
+  },
+  "order": [
+    "brand_story",
+    "why_choose_us"
+  ]
+}

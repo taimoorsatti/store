@@ -1,0 +1,75 @@
+<footer style="background: var(--color-primary); color: #FAF7F2; padding: 5rem 0 2rem; border-top: 1px solid rgba(200, 169, 126, 0.25);">
+  <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 3.5rem; margin-bottom: 4rem;">
+    <!-- Column 1: Brand Wordmark & Mission -->
+    <div>
+      <a href="{{ routes.root_url }}" style="display: inline-block; margin-bottom: 1rem;">
+        <span style="font-family: var(--font-heading); font-size: 1.85rem; font-weight: 700; color: #FFFFFF; letter-spacing: -0.02em;">
+          FABFaddons
+        </span>
+        <span style="display: block; font-size: 8.5px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-top: 2px;">
+          DUBAI · HAUTE BEAUTÉ
+        </span>
+      </a>
+      <p style="color: rgba(250, 247, 242, 0.75); font-size: 0.875rem; line-height: 1.7; margin-bottom: 1.25rem;">
+        An intentional curation of clinical-grade cosmetic devices and bio-cellular elixirs designed for the modern woman in the UAE.
+      </p>
+      <div style="font-family: var(--font-heading); font-style: italic; color: var(--color-accent); font-size: 1.1rem;">
+        "Beauty. Confidence. You."
+      </div>
+    </div>
+
+    <!-- Column 2: Curation -->
+    <div>
+      <h4 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1.5rem;">
+        The Collection
+      </h4>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
+        <li><a href="{{ routes.all_products_collection_url }}" style="color: rgba(250, 247, 242, 0.8);">Shop All Essentials</a></li>
+        <li><a href="/collections/all?filter.p.product_type=Facial+Devices" style="color: rgba(250, 247, 242, 0.8);">Sonic Cleansing & Sculpting</a></li>
+        <li><a href="/collections/all?filter.p.product_type=Botanical+Skincare" style="color: rgba(250, 247, 242, 0.8);">Bio-Cellular Repair Elixirs</a></li>
+        <li><a href="/collections/all?filter.p.product_type=LED+Light+Therapy" style="color: rgba(250, 247, 242, 0.8);">7-Color LED Phototherapy</a></li>
+        <li><a href="/collections/all?filter.p.product_type=Sculpting+%26+Gua+Sha" style="color: rgba(250, 247, 242, 0.8);">Brazilian Rose Quartz Sets</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Concierge & Policies -->
+    <div>
+      <h4 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1.5rem;">
+        Client Concierge
+      </h4>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem;">
+        <li><a href="/pages/about" style="color: rgba(250, 247, 242, 0.8);">About FABFaddons Dubai</a></li>
+        <li><a href="/pages/faq" style="color: rgba(250, 247, 242, 0.8);">Frequently Asked Questions</a></li>
+        <li><a href="/pages/shipping-policy" style="color: rgba(250, 247, 242, 0.8);">UAE Express Shipping Policy</a></li>
+        <li><a href="/pages/returns-policy" style="color: rgba(250, 247, 242, 0.8);">Returns & Warranty Policy</a></li>
+        <li><a href="/pages/privacy-policy" style="color: rgba(250, 247, 242, 0.8);">Privacy & Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: UAE Fulfillment & Payment -->
+    <div>
+      <h4 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1.5rem;">
+        Payment & Dispatch
+      </h4>
+      <p style="font-size: 0.825rem; color: rgba(250, 247, 242, 0.75); line-height: 1.6; margin-bottom: 1.25rem;">
+        Cash on Delivery across all 7 Emirates. Instant Apple Pay, Visa, Mastercard, and Tabby installment options.
+      </p>
+      <div style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-sm); padding: 0.75rem 1rem; font-size: 0.75rem; color: rgba(250, 247, 242, 0.85); display: flex; align-items: center; gap: 0.5rem;">
+        <span style="color: var(--color-accent); font-size: 1rem;">🔒</span>
+        <span>Shopify 256-Bit SSL Certified Security</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.75rem; color: rgba(250, 247, 242, 0.6);">
+    <p>&copy; {{ 'now' | date: '%Y' }} FABFaddons Cosmetics. All rights reserved.</p>
+    <p>Dubai &middot; Abu Dhabi &middot; Sharjah &middot; UAE Delivery</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

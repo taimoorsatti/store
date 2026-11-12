@@ -1,0 +1,103 @@
+<section class="main-cart-section" style="padding: 4.5rem 0 6rem; background: var(--color-bg);">
+  <div class="container" style="max-width: 880px;">
+    <!-- Title -->
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: 0.5rem;">
+        YOUR CURATED RITUAL
+      </span>
+      <h1 style="font-size: 2.75rem; font-weight: 700; color: var(--color-primary);">
+        {{ 'sections.cart.title' | t }}
+      </h1>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem 1.75rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.6rem;">
+        <span>
+          {% assign threshold_cents = settings.free_shipping_threshold | default: 250 | times: 100 %}
+          {% if cart.total_price >= threshold_cents %}
+            {{ 'sections.cart.free_shipping_unlocked' | t }}
+          {% else %}
+            {% assign away = threshold_cents | minus: cart.total_price | money %}
+            {{ 'sections.cart.free_shipping_away' | t: amount: away }}
+          {% endif %}
+        </span>
+      </div>
+      <div class="progress-meter">
+        {% assign pct = cart.total_price | times: 100 | divided_by: threshold_cents %}
+        {% if pct > 100 %}{% assign pct = 100 %}{% endif %}
+        <div class="progress-meter__fill" style="width: {{ pct }}%;"></div>
+      </div>
+    </div>
+
+    {%- if cart.item_count == 0 -%}
+      <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 4rem 2rem; text-align: center; box-shadow: var(--shadow-sm);">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--color-secondary-bg); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--color-primary);">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;">
+          {{ 'sections.cart.empty' | t }}
+        </h2>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+          Discover our 6 aesthetician-grade launch essentials to begin your beauty ritual.
+        </p>
+        <a href="{{ routes.all_products_collection_url }}" class="btn-primary">
+          {{ 'general.continue_shopping' | t }} &rarr;
+        </a>
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post">
+        <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2.5rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+          {%- for item in cart.items -%}
+            <div style="display: flex; gap: 1.75rem; padding-bottom: 1.75rem; margin-bottom: 1.75rem; border-bottom: 1px solid var(--color-border); align-items: center; flex-wrap: wrap;">
+              {%- if item.image -%}
+                <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title }}" style="width: 90px; height: 90px; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+              {%- endif -%}
+              <div style="flex: 2; min-width: 200px;">
+                <span style="font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent); font-weight: 700;">HAUTE BEAUTÉ</span>
+                <h3 style="font-size: 1.15rem; font-weight: 700; margin: 2px 0 4px;"><a href="{{ item.url }}" style="color: var(--color-primary);">{{ item.product.title }}</a></h3>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted);">{{ item.variant.title }}</p>
+                <div style="margin-top: 0.75rem; display: flex; align-items: center; gap: 1.25rem;">
+                  <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text);">Quantity: {{ item.quantity }}</span>
+                  <a href="/cart/change?line={{ forloop.index }}&quantity=0" style="font-size: 0.8rem; color: #BE123C; text-decoration: underline; font-weight: 600;">{{ 'sections.cart.remove' | t }}</a>
+                </div>
+              </div>
+              <div style="flex: 1; text-align: right; min-width: 120px;">
+                <span style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); display: block;">
+                  {{ item.final_line_price | money }}
+                </span>
+                <span style="font-size: 0.78rem; color: var(--color-text-muted);">
+                  {{ item.price | money }} each
+                </span>
+              </div>
+            </div>
+          {%- endfor -%}
+
+          <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 1.35rem; font-weight: 700; padding-top: 1rem; color: var(--color-primary);">
+            <span>{{ 'sections.cart.subtotal' | t }}</span>
+            <span>{{ cart.total_price | money }}</span>
+          </div>
+          <p style="font-size: 0.78rem; color: var(--color-text-muted); margin-top: 0.5rem; text-align: right;">
+            {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t }}
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <a href="{{ routes.all_products_collection_url }}" class="btn-secondary">
+            &larr; {{ 'general.continue_shopping' | t }}
+          </a>
+          <a href="/checkout" class="btn-primary" style="padding: 1rem 3.5rem;">
+            {{ 'sections.cart.checkout' | t }} &rarr;
+          </a>
+        </div>
+      </form>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart Page",
+  "settings": []
+}
+{% endschema %}

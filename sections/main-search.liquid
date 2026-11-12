@@ -1,0 +1,49 @@
+<section style="padding: 4rem 0; background: var(--color-bg);">
+  <div class="container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto 3.5rem;">
+      <h1 style="font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1.5rem;">
+        {%- if search.performed -%}
+          {{ 'general.search.heading' | t: terms: search.terms }}
+        {%- else -%}
+          {{ 'general.search.search' | t }}
+        {%- endif -%}
+      </h1>
+
+      <form action="{{ routes.search_url }}" method="get" role="search" style="display: flex; gap: 0.5rem; max-width: 500px; margin: 0 auto;">
+        <input
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="{{ 'general.search.search' | t }}"
+          style="flex: 1; padding: 0.875rem 1.25rem; border: 1px solid var(--color-secondary-bg); border-radius: 2px; font-size: 0.875rem; background: #FFF;"
+        >
+        <button type="submit" class="btn-primary" style="padding: 0.875rem 1.75rem;">
+          {{ 'general.search.submit' | t }}
+        </button>
+      </form>
+    </div>
+
+    {%- if search.performed -%}
+      {%- if search.results_count == 0 -%}
+        <p style="text-align: center; color: var(--color-text-muted); font-size: 1.1rem; padding: 3rem 0;">
+          {{ 'general.search.no_results' | t }}
+        </p>
+      {%- else -%}
+        <div class="product-grid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {% render 'product-card', product: item %}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search Results",
+  "settings": []
+}
+{% endschema %}

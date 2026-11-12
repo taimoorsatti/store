@@ -1,0 +1,57 @@
+<section class="main-contact-section" style="padding: 4.5rem 0 6rem; background: var(--color-bg);">
+  <div class="container" style="max-width: 840px;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: 0.5rem;">
+        CLIENT CONCIERGE
+      </span>
+      <h1 style="font-size: 2.75rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;">
+        Connect with FABFaddons
+      </h1>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.6;">
+        Our Dubai client concierge is at your service for product consultations, routine advice, and order inquiries.
+      </p>
+    </div>
+
+    <div style="background: #FFFFFF; padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm);">
+      {% form 'contact' %}
+        {%- if form.posted_successfully? -%}
+          <div style="background: #ECFDF5; border: 1px solid #059669; color: #065F46; padding: 1rem 1.25rem; border-radius: var(--radius-sm); font-weight: 600; margin-bottom: 1.5rem; font-size: 0.9rem;">
+            Thank you! Your message has been received by our Dubai concierge. We will respond within 24 hours.
+          </div>
+        {%- endif -%}
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Your Name</label>
+            <input type="text" name="contact[name]" required style="width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.875rem; background: var(--color-bg);">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Email Address</label>
+            <input type="email" name="contact[email]" required style="width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.875rem; background: var(--color-bg);">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Phone / WhatsApp (+971)</label>
+          <input type="tel" name="contact[phone]" placeholder="+971 50 123 4567" style="width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.875rem; background: var(--color-bg);">
+        </div>
+
+        <div style="margin-bottom: 1.75rem;">
+          <label style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">How Can We Assist Your Ritual?</label>
+          <textarea rows="5" name="contact[body]" required placeholder="Share your inquiry regarding order dispatch, device usage, or ingredients..." style="width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.875rem; background: var(--color-bg); font-family: inherit;"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%;">
+          Submit Inquiry to Concierge &rarr;
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": []
+}
+{% endschema %}

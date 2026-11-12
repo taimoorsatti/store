@@ -1,0 +1,44 @@
+{%- if section.settings.show_announcement -%}
+  <div class="announcement-bar" style="background-color: var(--color-primary); color: #FAF7F2; padding: 0.6rem 1rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; border-bottom: 1px solid rgba(200, 169, 126, 0.25);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-accent); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+        <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent);"></span>
+        <span>{{ section.settings.pill_text | default: 'UAE HAUTE COSMETICS' }}</span>
+      </div>
+
+      <div style="text-align: center; font-weight: 600;">
+        {{ section.settings.text | default: 'Complimentary UAE Express Delivery on Orders Over AED 250 · Cash on Delivery & Apple Pay Available' }}
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.7rem; opacity: 0.85;">
+        <span>Dubai &middot; Abu Dhabi</span>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "pill_text",
+      "label": "Eyebrow tag",
+      "default": "UAE HAUTE COSMETICS"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement text",
+      "default": "Complimentary UAE Express Delivery on Orders Over AED 250 · Cash on Delivery & Apple Pay Available"
+    }
+  ]
+}
+{% endschema %}

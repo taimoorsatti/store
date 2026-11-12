@@ -1,0 +1,37 @@
+{
+  "current": {
+    "color_primary": "#351C27",
+    "color_background": "#F7F3ED",
+    "color_accent": "#C5A477",
+    "color_secondary_bg": "#E9DFD5",
+    "color_text_primary": "#29231F",
+    "color_text_muted": "#766B64",
+    "currency_code": "AED",
+    "free_shipping_threshold": 250,
+    "cart_drawer_enabled": true,
+    "show_cod_badge": true,
+    "concierge_whatsapp": "+971501234567",
+    "concierge_phone": "+971 4 800 FABF (3223)",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "text": "Complimentary UAE Express Delivery on Orders Over AED 250 · 100% Authentic Beauty Essentials",
+          "enable_language_selector": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_text": "FABFaddons",
+          "enable_sticky": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    }
+  }
+}

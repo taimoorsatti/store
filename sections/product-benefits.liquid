@@ -1,0 +1,87 @@
+<section class="product-benefits-section" style="padding: 5.5rem 0; background: var(--color-bg); border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: 0.75rem;">
+        {{ section.settings.badge | default: 'FORMULATION & DEVICE SCIENCE' }}
+      </span>
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;">
+        {{ section.settings.title | default: 'Engineered for Real Beauty Transformations.' }}
+      </h2>
+      <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 640px; margin: 0 auto; line-height: 1.6;">
+        {{ section.settings.subtitle | default: 'We bridge advanced bio-active skincare science with aesthetician-grade home wellness devices.' }}
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      <!-- Pillar 1 -->
+      <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2.25rem 2rem; box-shadow: var(--shadow-sm); transition: transform 0.3s ease;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-secondary-bg); display: flex; align-items: center; justify-content: center; color: var(--color-primary); margin-bottom: 1.25rem; font-size: 1.25rem;">
+          ✦
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;">
+          Bio-Active Peptides & 24K Gold
+        </h3>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+          Our cellular repair elixirs are micro-infused with bio-mimetic peptides and 24-karat gold flakes to reinforce moisture barriers in dry, air-conditioned environments.
+        </p>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2.25rem 2rem; box-shadow: var(--shadow-sm); transition: transform 0.3s ease;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-secondary-bg); display: flex; align-items: center; justify-content: center; color: var(--color-primary); margin-bottom: 1.25rem; font-size: 1.25rem;">
+          ✦
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;">
+          Medical-Grade Sonic Pulsation
+        </h3>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+          Gentle acoustic waves dislodge 99.5% of dirt, cosmetics residue, and sebaceous filaments without tearing or stressing sensitive skin tissue.
+        </p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 2.25rem 2rem; box-shadow: var(--shadow-sm); transition: transform 0.3s ease;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-secondary-bg); display: flex; align-items: center; justify-content: center; color: var(--color-primary); margin-bottom: 1.25rem; font-size: 1.25rem;">
+          ✦
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.75rem;">
+          Certified Brazilian Natural Quartz
+        </h3>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.6;">
+          Hand-carved authentic crystals naturally maintain cool temperatures to soothe vascular redness, depuff morning contours, and promote circulation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Eyebrow badge",
+      "default": "FORMULATION & DEVICE SCIENCE"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Engineered for Real Beauty Transformations."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We bridge advanced bio-active skincare science with aesthetician-grade home wellness devices."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Benefits"
+    }
+  ]
+}
+{% endschema %}

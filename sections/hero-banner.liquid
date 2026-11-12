@@ -1,0 +1,114 @@
+<section class="hero-banner-section" style="position: relative; background: var(--color-bg); padding: 5rem 0 6rem; border-bottom: 1px solid var(--color-border); overflow: hidden;">
+  <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; align-items: center;">
+    <div>
+      <!-- Eyebrow Pill -->
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--color-secondary-bg); border: 1px solid var(--color-border); padding: 0.35rem 0.85rem; border-radius: 20px; margin-bottom: 1.5rem;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--color-accent);"></span>
+        <span style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-primary);">
+          {{ section.settings.subheading | default: 'HAUTE BEAUTÉ · DUBAI EDITION' }}
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 style="font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; color: var(--color-primary);">
+        {{ section.settings.heading | default: 'The New Standard in Luxury Skincare Rituals.' }}
+      </h1>
+
+      <!-- Body Copy -->
+      <p style="font-size: 1.1rem; color: var(--color-text-muted); line-height: 1.65; margin-bottom: 2.25rem; max-width: 520px;">
+        {{ section.settings.text | default: 'Curating six transformative beauty tools and bio-cellular formulas engineered to elevate your daily self-care into an effortless luxury ritual.' }}
+      </p>
+
+      <!-- Dual Actions -->
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+        <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="btn-primary">
+          {{ section.settings.button_label | default: 'Explore Collection' }} &rarr;
+        </a>
+        <a href="/pages/about" class="btn-secondary">
+          Our Brand Philosophy
+        </a>
+      </div>
+
+      <!-- Value Props Ticker -->
+      <div style="display: flex; gap: 1.75rem; border-top: 1px solid var(--color-border); padding-top: 1.5rem; flex-wrap: wrap; font-size: 0.78rem; font-weight: 600; color: var(--color-text);">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="16" height="16" fill="none" stroke="var(--color-accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+          <span>UAE Express Delivery (1-2 Days)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="16" height="16" fill="none" stroke="var(--color-accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+          <span>Cash on Delivery (COD)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Hero Visual -->
+    <div style="position: relative;">
+      <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--color-border);">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'eager', style: 'width: 100%; height: auto; display: block;' }}
+        {%- else -%}
+          <img src="{{ 'hero-luxury-beauty-ritual.jpg' | asset_url }}" alt="FABFaddons Luxury Beauty Campaign" style="width: 100%; height: auto; display: block;">
+        {%- endif -%}
+      </div>
+
+      <!-- Floating Trust Card -->
+      <div style="position: absolute; bottom: -20px; left: -20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; box-shadow: var(--shadow-md); max-width: 260px;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+          <span style="color: var(--color-accent); font-size: 1.1rem;">★ ★ ★ ★ ★</span>
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-primary);">5.0 / 5.0</span>
+        </div>
+        <p style="font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.4; margin: 0;">
+          Verified UAE Client Satisfaction in Dubai, Abu Dhabi & Sharjah.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Eyebrow subheading",
+      "default": "HAUTE BEAUTÉ · DUBAI EDITION"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "The New Standard in Luxury Skincare Rituals."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "Curating six transformative beauty tools and bio-cellular formulas engineered to elevate your daily self-care into an effortless luxury ritual."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Campaign image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}

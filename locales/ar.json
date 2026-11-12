@@ -1,0 +1,82 @@
+{
+  "general": {
+    "404": {
+      "title": "404 - الصفحة غير موجودة",
+      "subtext": "الصفحة التي تبحثين عنها غير متوفرة حالياً.",
+      "link": "العودة للمتجر"
+    },
+    "continue_shopping": "متابعة التسوق",
+    "search": {
+      "search": "ابحثي عن أدوات التجميل، السيروم، الأجهزة...",
+      "submit": "بحث",
+      "heading": "نتائج البحث عن \"{{ terms }}\"",
+      "no_results": "لم نجد نتائج مطابقة لبحثك."
+    }
+  },
+  "sections": {
+    "header": {
+      "menu": "القائمة"
+    },
+    "cart": {
+      "title": "حقيبة التسوق",
+      "empty": "حقيبة التسوق فارغة حالياً",
+      "subtotal": "المجموع الفرعي",
+      "checkout": "إتمام الطلب بأمان",
+      "free_shipping_unlocked": "مبروك! حصلتِ على توصيل سريع مجاني في الإمارات",
+      "free_shipping_away": "أضيفي منتجات بقيمة {{ amount }} درهم للشحن المجاني",
+      "view_cart": "عرض الحقيبة",
+      "remove": "حذف",
+      "taxes_and_shipping_policy_at_checkout_html": "تحسب الضرائب والشحن السريع عند الدفع"
+    },
+    "featured_products": {
+      "title": "المجموعة الافتتاحية الحصرية",
+      "subtitle": "ستة منتجات تجميلية استثنائية صُممت بأعلى معايير الرفاهية العصرية.",
+      "view_all": "عرض جميع المنتجات"
+    },
+    "collection_template": {
+      "title": "جميع مستحضرات التجميل الفاخرة",
+      "filter_and_sort": "التصفية والترتيب",
+      "filter_by_label": "تصفية المنتجات",
+      "clear_all": "إعادة تعيين الكل",
+      "clear": "مسح",
+      "apply": "تطبيق التصفية",
+      "close": "إغلاق",
+      "sort_by_label": "ترتيب حسب",
+      "product_count": "{{ count }} منتج",
+      "product_count_simple": "{{ count }} منتجات",
+      "from": "من درهم",
+      "to": "إلى درهم",
+      "in_stock": "متوفر حالياً",
+      "out_of_stock": "غير متوفر",
+      "empty": "لم نجد أي منتجات تطابق خيارات التصفية المحددة.",
+      "use_fewer_filters": "يرجى تجربة إزالة بعض الفلاتر لعرض المنتجات.",
+      "availability": "التوفر",
+      "price": "نطاق السعر",
+      "product_type": "نوع المنتج",
+      "brand": "العلامة التجارية",
+      "sort_options": {
+        "manual": "المقترحات المميزة",
+        "best_selling": "الأكثر مبيعاً",
+        "title_ascending": "أبجدياً، أ–ي",
+        "title_descending": "أبجدياً، ي–أ",
+        "price_ascending": "السعر، من الأقل للأعلى",
+        "price_descending": "السعر، من الأعلى للأقل",
+        "created_descending": "الأحدث أولاً",
+        "created_ascending": "الأقدم أولاً"
+      }
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "إضافة إلى الحقيبة",
+      "buy_now": "شراء فوري",
+      "sold_out": "نفدت الكمية",
+      "unavailable": "غير متوفر",
+      "in_stock": "متوفر في المخزون · جاهز للشحن السريع",
+      "on_sale": "خصم",
+      "quick_add": "إضافة سريعة",
+      "uae_delivery": "توصيل سريع بالإمارات خلال 1-2 يوم عمل في دبي وأبوظبي",
+      "cod_available": "الدفع عند الاستلام وآبل باي متوفران"
+    }
+  }
+}

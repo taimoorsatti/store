@@ -1,0 +1,23 @@
+<section style="padding: 6rem 0; background: var(--color-bg); text-align: center;">
+  <div class="container" style="max-width: 600px;">
+    <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: 1rem;">
+      Error 404
+    </span>
+    <h1 style="font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: 1rem;">
+      {{ 'general.404.title' | t | default: 'Page Not Found' }}
+    </h1>
+    <p style="color: var(--color-text-muted); font-size: 1.125rem; margin-bottom: 2.5rem;">
+      {{ 'general.404.subtext' | t | default: 'The beauty ritual page you are searching for is unavailable.' }}
+    </p>
+    <a href="{{ routes.root_url }}" class="btn-primary">
+      {{ 'general.404.link' | t | default: 'Return to Storefront' }}
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404 Page",
+  "settings": []
+}
+{% endschema %}

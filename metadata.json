@@ -1,0 +1,6 @@
+{
+  "name": "FABFaddons — Luxury Beauty & Cosmetics",
+  "description": "Modern affordable luxury beauty, skincare and cosmetics dropshipping storefront for the UAE market. Beauty. Confidence. You.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

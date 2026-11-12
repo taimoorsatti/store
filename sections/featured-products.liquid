@@ -1,0 +1,65 @@
+<section style="padding: 5rem 0; background: var(--color-bg);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem;">
+        {{ section.settings.title | default: 'The Launch Collection' }}
+      </h2>
+      <p style="color: var(--color-text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto;">
+        {{ section.settings.subtitle | default: 'Six meticulously engineered beauty essentials, crafted for modern luxury living.' }}
+      </p>
+    </div>
+
+    <div class="product-grid">
+      {%- assign collection = collections[section.settings.collection] -%}
+      {%- for product in collection.products limit: section.settings.products_to_show -%}
+        {% render 'product-card', product: product %}
+      {%- else -%}
+        {%- for i in (1..6) -%}
+          <div class="product-card" style="padding: 2rem; text-align: center;">
+            <p style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.5rem;">Launch Beauty Essential {{ i }}</p>
+            <p style="color: var(--color-primary); font-weight: 700;">AED 249</p>
+          </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "The Launch Collection"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Six meticulously engineered beauty essentials, crafted for modern luxury living."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 6,
+      "label": "Number of products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,106 @@
+<section class="featured-categories-section" style="padding: 5rem 0; background: #FFFFFF; border-bottom: 1px solid var(--color-border);">
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-accent); font-weight: 700; display: block; margin-bottom: 0.5rem;">
+          {{ section.settings.badge | default: 'EXPLORE BY RITUAL' }}
+        </span>
+        <h2 style="font-size: 2.25rem; font-weight: 700; color: var(--color-primary); line-height: 1.2;">
+          {{ section.settings.heading | default: 'Curated Categories' }}
+        </h2>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 0.4rem;">
+          {{ section.settings.subheading | default: 'Tailored essentials for every step of your self-care journey' }}
+        </p>
+      </div>
+
+      <a href="{{ routes.all_products_collection_url }}" class="btn-secondary" style="font-size: 11px; padding: 0.65rem 1.5rem;">
+        View All Categories &rarr;
+      </a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.75rem;">
+      <!-- Category 1: Facial Devices -->
+      <a href="/collections/all?filter.p.product_type=Facial+Devices" class="category-card" style="display: block; position: relative; border-radius: var(--radius-md); overflow: hidden; background: #F7F3ED; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="aspect-ratio: 4/5; overflow: hidden; position: relative;">
+          <img src="{{ 'product-sonic-cleansing-device.jpg' | asset_url }}" alt="Facial Devices" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(42, 18, 30, 0.85) 100%);"></div>
+          <div style="position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; color: #FAF7F2;">
+            <span style="font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent); font-weight: 700;">HAUTE BEAUTÉ</span>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-top: 2px;">Beauty Devices</h3>
+            <span style="font-size: 0.75rem; opacity: 0.85; margin-top: 4px; display: block;">Sonic & Phototherapy</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Category 2: Skincare Elixirs -->
+      <a href="/collections/all?filter.p.product_type=Botanical+Skincare" class="category-card" style="display: block; position: relative; border-radius: var(--radius-md); overflow: hidden; background: #F7F3ED; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="aspect-ratio: 4/5; overflow: hidden; position: relative;">
+          <img src="{{ 'product-peptide-elixir-serum.jpg' | asset_url }}" alt="Botanical Skincare" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(42, 18, 30, 0.85) 100%);"></div>
+          <div style="position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; color: #FAF7F2;">
+            <span style="font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent); font-weight: 700;">BIO-CELLULAR</span>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-top: 2px;">Skincare Elixirs</h3>
+            <span style="font-size: 0.75rem; opacity: 0.85; margin-top: 4px; display: block;">24K Gold & Peptides</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Category 3: Sculpting & Gua Sha -->
+      <a href="/collections/all?filter.p.product_type=Sculpting+%26+Gua+Sha" class="category-card" style="display: block; position: relative; border-radius: var(--radius-md); overflow: hidden; background: #F7F3ED; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="aspect-ratio: 4/5; overflow: hidden; position: relative;">
+          <img src="{{ 'product-rose-quartz-sculpting-set.jpg' | asset_url }}" alt="Sculpting & Gua Sha" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(42, 18, 30, 0.85) 100%);"></div>
+          <div style="position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; color: #FAF7F2;">
+            <span style="font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent); font-weight: 700;">NATURAL MINERALS</span>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-top: 2px;">Gua Sha & Rollers</h3>
+            <span style="font-size: 0.75rem; opacity: 0.85; margin-top: 4px; display: block;">Brazilian Rose Quartz</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Category 4: Vanity & Storage -->
+      <a href="/collections/all?filter.p.product_type=Vanity+%26+Storage" class="category-card" style="display: block; position: relative; border-radius: var(--radius-md); overflow: hidden; background: #F7F3ED; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+        <div style="aspect-ratio: 4/5; overflow: hidden; position: relative;">
+          <img src="{{ 'product-luxury-cosmetics-organizer.jpg' | asset_url }}" alt="Vanity & Storage" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(42, 18, 30, 0.85) 100%);"></div>
+          <div style="position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; color: #FAF7F2;">
+            <span style="font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-accent); font-weight: 700;">ORGANIZATION</span>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: #FFFFFF; margin-top: 2px;">Vanity Essentials</h3>
+            <span style="font-size: 0.75rem; opacity: 0.85; margin-top: 4px; display: block;">360° Acrylic Storage</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Eyebrow badge",
+      "default": "EXPLORE BY RITUAL"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Curated Categories"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Tailored essentials for every step of your self-care journey"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Categories"
+    }
+  ]
+}
+{% endschema %}

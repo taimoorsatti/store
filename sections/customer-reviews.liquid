@@ -1,0 +1,54 @@
+<section style="padding: 5rem 0; background: #FFFFFF; border-top: 1px solid var(--color-secondary-bg);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem;">
+        {{ section.settings.heading | default: 'Verified Customer Experiences' }}
+      </h2>
+      <p style="color: var(--color-text-muted); font-size: 1rem;">
+        Genuine reviews from beauty enthusiasts in Dubai, Abu Dhabi, and the Emirates.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <div style="background: var(--color-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--color-secondary-bg);">
+        <div style="color: var(--color-accent); margin-bottom: 0.5rem;">★★★★★</div>
+        <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Fast delivery & premium feel</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1rem;">"The Aura sonic device arrived within 24 hours to Dubai Marina. After three days my pores feel so much cleaner."</p>
+        <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-primary);">Reem A. · Dubai Marina</span>
+      </div>
+
+      <div style="background: var(--color-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--color-secondary-bg);">
+        <div style="color: var(--color-accent); margin-bottom: 0.5rem;">★★★★★</div>
+        <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Pure liquid glow</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1rem;">"Living with AC all day usually dries my skin. The Aurēlia serum absorbs instantly with zero stickiness."</p>
+        <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-primary);">Mariam K. · Abu Dhabi</span>
+      </div>
+
+      <div style="background: var(--color-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--color-secondary-bg);">
+        <div style="color: var(--color-accent); margin-bottom: 0.5rem;">★★★★★</div>
+        <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem;">Airwrap works in humidity</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 1rem;">"The Aurora multi-styler holds curls even in UAE summer weather. The standard UAE 3-pin plug is authentic."</p>
+        <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-primary);">Fatima N. · Sharjah</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Verified Customer Experiences"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Reviews"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "subheading": "HAUTE BEAUTÉ · DUBAI EDITION",
+        "heading": "The New Standard in Luxury Skincare Rituals.",
+        "text": "Curating six transformative beauty tools and bio-cellular formulas engineered to elevate your daily self-care into an effortless luxury ritual.",
+        "button_label": "Explore Collection"
+      }
+    },
+    "categories": {
+      "type": "featured-categories",
+      "settings": {
+        "badge": "EXPLORE BY RITUAL",
+        "heading": "Curated Categories",
+        "subheading": "Tailored essentials for every step of your self-care journey"
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "title": "The Inaugural Capsule",
+        "subtitle": "Six aesthetician-grade essentials formulated and engineered for modern luxury living.",
+        "products_to_show": 6
+      }
+    },
+    "best_sellers": {
+      "type": "best-sellers",
+      "settings": {
+        "badge": "MOST COVETED IN DUBAI",
+        "title": "Best Sellers",
+        "subtitle": "Our highest-rated, clinically backed beauty devices and botanical serums loved across the Emirates.",
+        "products_to_show": 3,
+        "button_label": "Shop All Best Sellers"
+      }
+    },
+    "new_arrivals": {
+      "type": "new-arrivals",
+      "settings": {
+        "badge": "JUST LAUNCHED",
+        "title": "New Innovations",
+        "subtitle": "Engineered with cutting-edge micro-current, phototherapy, and peptide cellular science.",
+        "products_to_show": 3
+      }
+    },
+    "product_spotlight": {
+      "type": "product-spotlight",
+      "settings": {
+        "badge": "STAR PRODUCT SPOTLIGHT",
+        "title": "Sonic Facial Sculpting & Deep Cleansing Device",
+        "description": "Engineered for high-humidity climates. Medical-grade sonic frequencies decongest stubborn pores, accelerate lymphatic drainage, and sculpt cheekbone contours in a 3-minute morning ritual."
+      }
+    },
+    "brand_story": {
+      "type": "brand-story",
+      "settings": {
+        "heading": "Beauty Is More Than a Routine. It Is an Intentional Ritual."
+      }
+    },
+    "product_benefits": {
+      "type": "product-benefits",
+      "settings": {
+        "badge": "FORMULATION & DEVICE SCIENCE",
+        "title": "Engineered for Real Beauty Transformations.",
+        "subtitle": "We bridge advanced bio-active skincare science with aesthetician-grade home wellness devices."
+      }
+    },
+    "why_choose_us": {
+      "type": "why-choose-us",
+      "settings": {
+        "badge": "THE FABFADDONS DISTINCTION",
+        "heading": "Why Beauty Connoisseurs Choose Us",
+        "subheading": "Uncompromising standards of quality, dispatch velocity, and concierge client care."
+      }
+    },
+    "customer_faq": {
+      "type": "customer-faq",
+      "settings": {
+        "badge": "CLIENT CONCIERGE ASSISTANCE",
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about our cosmetics rituals, express UAE delivery, and payment options."
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Join the FABFaddons VIP Beauty Circle."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "categories",
+    "featured_products",
+    "best_sellers",
+    "new_arrivals",
+    "product_spotlight",
+    "brand_story",
+    "product_benefits",
+    "why_choose_us",
+    "customer_faq",
+    "newsletter"
+  ]
+}
